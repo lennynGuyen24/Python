@@ -1,0 +1,23 @@
+# Online Python - IDE, Editor, Compiler, Interpreter
+
+pebbles = 50
+jump_distance = 21
+meal_location = 1
+worm_location = 1
+
+#pebbles = int(input('Enter pebbles: '))
+#jump_distance = int(input('Enter jump distance: '))
+#meal_location = int(input('Enter meal location: '))
+
+jumps = 0
+while meal_location != 0:
+    jumps += 1
+    if abs(worm_location) + jump_distance > pebbles:
+        worm_location =  pebbles +  (worm_location - jump_distance)
+    else:
+        worm_location =  worm_location - jump_distance
+    print(f"Jump: {jumps}:  Worm to frog distance in the clockwise direction: {worm_location}")
+    meal_location = (meal_location - jump_distance) % pebbles
+    print(f"----------Frog to worm in the clockwise direction: {meal_location}.")
+  
+print(f"Frog needs to jump {jumps} times in the clockwise direction to reach his meal.")
